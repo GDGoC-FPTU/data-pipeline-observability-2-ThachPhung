@@ -18,14 +18,19 @@ Chay `agent_simulation.py` voi 2 bo du lieu va ghi lai ket qua:
 **Cach chay thi nghiem:**
 
 ```bash
-python3 solution.py
-python3 generate_garbage.py
-python3 -c "
-from agent_simulation import simulate_agent_response
-q = 'What is the best electronic product?'
-print(simulate_agent_response(q, 'processed_data.csv'))
-print(simulate_agent_response(q, 'garbage_data.csv'))
-"
+python3 solution.py          # Tao processed_data.csv (clean data)
+python3 generate_garbage.py # Tao garbage_data.csv (poisoned data)
+python3 agent_simulation.py   # Chay stress test voi ca 2 scenario
+```
+
+**Output thuc te khi chay `agent_simulation.py`:**
+
+```
+Testing with CLEAN data:
+Agent: Based on my data, the best choice is Laptop at $1200.
+
+Testing with GARBAGE data:
+Agent: Based on my data, the best choice is Nuclear Reactor at $999999.
 ```
 
 ---
